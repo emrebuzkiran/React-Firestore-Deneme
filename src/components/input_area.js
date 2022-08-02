@@ -11,6 +11,7 @@ function Input() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const wUsers = async () => {
+      // eslint-disable-next-line
       const data = await setDoc(doc(userCollectionRef), {
         exname: surname,
         name: username,

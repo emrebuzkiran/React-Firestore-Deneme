@@ -12,17 +12,18 @@ function ShowUser() {
       setUsers(veri.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getUsers();
+    // eslint-disable-next-line
   }, []);
   return (
-    <div className="show m-10">
+    <div className="show m-10 ">
       {users.map((user) => {
         return (
-          <>
+          <div key={user.id}>
             <div> kim : {user.name}</div>
             <div> mesajı : {user.exname}</div>
             <div> gönderilme zamanı : {user.date}</div>
             <br />
-          </>
+          </div>
         );
       })}
     </div>
