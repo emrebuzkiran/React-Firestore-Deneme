@@ -22,7 +22,10 @@ function Input() {
     setUsername("");
     setSurname("");
   };
+  function formvalidate(){
+    return username.length > 0 && surname.length > 0;
 
+  }
   return (
     <div className="kalk m-10">
       <form>
@@ -31,7 +34,7 @@ function Input() {
             className="border-2 border-black"
             value={username}
             type="text"
-            placeholder="nick"
+            placeholder="Title"
             onChange={(e) => setUsername(e.target.value)}
           />
 
@@ -39,11 +42,11 @@ function Input() {
             className="border-2 border-black"
             value={surname}
             type="message"
-            placeholder="mesajınız"
+            placeholder="Message"
             onChange={(e) => setSurname(e.target.value)}
           />
         </div>
-        <button className="bg-red-500 rounded" onClick={handleSubmit}>
+        <button className="bg-red-500 rounded" onClick={handleSubmit} disabled={!formvalidate()}>
           Submit
         </button>
       </form>
